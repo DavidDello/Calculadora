@@ -53,10 +53,10 @@ var Calculadora={
                             console.log("Operacion Final: "+resultado);
                             resultado = eval(resultado);
                             pantalla.innerHTML=( ((resultado.toString())[0]=="-") ? (resultado.toString()).substr(0,9) : (resultado.toString()).substr(0,8) );
-                            console.log("_________________________________________");
+                            console.log("__________________________________________________");
                             console.log("Resultado real: "+resultado);
                             console.log("Lo que se muestra en pantalla: "+pantalla.innerHTML);
-                            console.log("_________________________________________");
+                            console.log("__________________________________________________");
                             resultado=pantalla.innerHTML;
                             h=0;
                           }
@@ -79,7 +79,7 @@ var Calculadora={
                               pantalla.innerHTML=( (resultado.substring(resultado.length-6,resultado.length)=="((-1)*") ? (pantalla.innerHTML) : ("") );
                               break;
                         case "menos":
-                          resultado=((resultado[resultado.length-1]=="+") ? (resultado.substring(0,resultado.length-1)+"-") : ( ((resultado[resultado.length-1]=="/")||(resultado[resultado.length-1]=="-")) ? (resultado+"((-1)*") : ( (resultado[resultado.length-1]=="*") ? ( (resultado.substring(resultado.length-6,resultado.length)=="((-1)*") ? (resultado.substring(0,h+1)) : (resultado+"((-1)*") ) : ("("+resultado+")-") )  ) );
+                          resultado=((resultado[resultado.length-1]=="+") ? (resultado.substring(0,resultado.length-1)+"-") : ( ((resultado[resultado.length-1]=="/")||(resultado[resultado.length-1]=="-")) ? (resultado+"((-1)*") : ( (resultado[resultado.length-1]=="*") ? ( (resultado.substring(resultado.length-6,resultado.length)=="((-1)*") ? (resultado.substring(0,h+1)) : (resultado+"((-1)*") ) : ("("+resultado+( (resultado.substring(h+1,h+6)=="((-1)") ? ( (resultado[resultado.length-1]!=")") ? (")") : ("") ) : ("") )+")-") )  ) );
                           h = ((resultado[resultado.length-1]=="*") ? (resultado.length-7) : (resultado.length-1) );
                           pantalla.innerHTML=((resultado[resultado.length-1]=="-") ? ("") : ("-"));
                           break;
@@ -112,10 +112,10 @@ var Calculadora={
                                 console.log("Operacion Final: "+resultado);
                                 resultado = eval(resultado);
                                 pantalla.innerHTML=( ((resultado.toString())[0]=="-") ? (resultado.toString()).substr(0,9) : (resultado.toString()).substr(0,8) );
-                                console.log("_________________________________________");
+                                console.log("__________________________________________________");
                                 console.log("Resultado real: "+resultado);
                                 console.log("Lo que se muestra en pantalla: "+pantalla.innerHTML);
-                                console.log("_________________________________________");
+                                console.log("__________________________________________________");
                                 resultado=pantalla.innerHTML;
                                 h=0;
                               }
@@ -138,10 +138,10 @@ var Calculadora={
                               pantalla.innerHTML=( (resultado.substring(resultado.length-6,resultado.length)=="((-1)*") ? (pantalla.innerHTML) : ("") );
                               break;
                           case "menos":
-                              resultado=((resultado[resultado.length-1]=="+") ? (resultado.substring(0,resultado.length-1)+"-") : ( ((resultado[resultado.length-1]=="/")||(resultado[resultado.length-1]=="-")) ? (resultado+"((-1)*") : ( (resultado[resultado.length-1]=="*") ? ( (resultado.substring(resultado.length-6,resultado.length)=="((-1)*") ? (resultado.substring(0,h+1)) : (resultado+"((-1)*") ) : ("("+resultado+")-") )  ) );
-                              h = ((resultado[resultado.length-1]=="*") ? (resultado.length-7) : (resultado.length-1) );
-                              pantalla.innerHTML=((resultado[resultado.length-1]=="-") ? ("") : ("-"));
-                              break;
+                                resultado=((resultado[resultado.length-1]=="+") ? (resultado.substring(0,resultado.length-1)+"-") : ( ((resultado[resultado.length-1]=="/")||(resultado[resultado.length-1]=="-")) ? (resultado+"((-1)*") : ( (resultado[resultado.length-1]=="*") ? ( (resultado.substring(resultado.length-6,resultado.length)=="((-1)*") ? (resultado.substring(0,h+1)) : (resultado+"((-1)*") ) : ("("+resultado+( (resultado.substring(h+1,h+6)=="((-1)") ? ( (resultado[resultado.length-1]!=")") ? (")") : ("") ) : ("") )+")-") )  ) );
+                                h = ((resultado[resultado.length-1]=="*") ? (resultado.length-7) : (resultado.length-1) );
+                                pantalla.innerHTML=((resultado[resultado.length-1]=="-") ? ("") : ("-"));
+                                break;
                           case "punto":
                               if(pantalla.innerHTML.indexOf(".")==(-1))
                               {
